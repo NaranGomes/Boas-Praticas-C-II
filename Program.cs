@@ -1,8 +1,15 @@
-﻿using DesignPatterns2.Cap_1;
-using System.Data;
-using System.Data.SqlClient;
+﻿using DesignPatterns2.Cap_2;
 
-IDbConnection conexao = new ConnectionFactory().GetConnection();
+NotasMusicais notas = new NotasMusicais();
+IList<INota> musica = new List<INota>()
+{
+    notas.Pega("do"),
+    notas.Pega("re"),
+    notas.Pega("mi"),
+    notas.Pega("fa"),
+    notas.Pega("fa"),
+    notas.Pega("fa"),
 
-IDbCommand comando = conexao.CreateCommand();
-comando.CommandText = "select * from tabela";
+};
+Piano piano = new Piano();
+piano.Toca(musica);
