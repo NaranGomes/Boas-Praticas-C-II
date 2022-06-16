@@ -1,15 +1,15 @@
-﻿using DesignPatterns2.Cap_2;
+﻿
+using DesignPatterns2.Cap_3;
 
-NotasMusicais notas = new NotasMusicais();
-IList<INota> musica = new List<INota>()
-{
-    notas.Pega("do"),
-    notas.Pega("re"),
-    notas.Pega("mi"),
-    notas.Pega("fa"),
-    notas.Pega("fa"),
-    notas.Pega("fa"),
+Historico historico = new Historico();
 
-};
-Piano piano = new Piano();
-piano.Toca(musica);
+Contrato contrato = new Contrato(DateTime.Now, "Naran", TipoContrato.Novo);
+historico.Adiciona(contrato.SalvaEstado());
+
+contrato.Avanca();
+historico.Adiciona(contrato.SalvaEstado());
+
+contrato.Avanca();
+historico.Adiciona(contrato.SalvaEstado());
+
+Console.WriteLine(historico.Pega(0).Contrato.Tipo);
