@@ -1,15 +1,9 @@
 ﻿
-using DesignPatterns2.Cap_3;
 
-Historico historico = new Historico();
 
-Contrato contrato = new Contrato(DateTime.Now, "Naran", TipoContrato.Novo);
-historico.Adiciona(contrato.SalvaEstado());
 
-contrato.Avanca();
-historico.Adiciona(contrato.SalvaEstado());
+using DesignPatterns2.Cap_4;
 
-contrato.Avanca();
-historico.Adiciona(contrato.SalvaEstado());
-
-Console.WriteLine(historico.Pega(0).Contrato.Tipo);
+IExpressao direita = new Soma(new Numero(1), new Numero(10));
+IExpressao esquerda = new Subtracao(new Numero(20), new Numero(10));
+IExpressao soma = new Soma(esquerda, direita);
