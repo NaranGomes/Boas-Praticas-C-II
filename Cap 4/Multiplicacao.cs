@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesignPatterns2.Cap_5;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,12 @@ namespace DesignPatterns2.Cap_4
             this.esquerda = esquerda;
             this.direita = direita;
         }
+
+        public void Aceita(IVisitor impressora)
+        {
+            throw new NotImplementedException();
+        }
+
         public int Avalia()
         {
             int ValorEsquerda = esquerda.Avalia();
